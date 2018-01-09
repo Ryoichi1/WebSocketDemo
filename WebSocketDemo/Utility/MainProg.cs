@@ -9,6 +9,7 @@ namespace WebSocketDemo
 {
     public static class MainProgram
     {
+
         public static void GetData()
         {
             Flags.IsActiveGetData = true;
@@ -23,8 +24,25 @@ namespace WebSocketDemo
                 // If you would like to connect to the server with the secure connection,
                 // you should create a new instance with a wss scheme WebSocket URL.
 
+                var adr = "";
+                switch (State.Target)
+                {
+                    case State.TARGET.DEMO_01:
+                        adr = Constants.ATS_DEMO1;
+                        break;
+                    case State.TARGET.DEMO_02:
+                        adr = Constants.ATS_DEMO2;
+                        break;
+                    case State.TARGET.DEMO_03:
+                        adr = Constants.ATS_DEMO3;
+                        break;
+                    case State.TARGET.DEMO_04:
+                        adr = Constants.ATS_DEMO4;
+                        break;
+                }
+
                 using (var nf = new Notifier())
-                using (var ws = new WebSocketSharp.WebSocket("wss://api.sakura.io/ws/v1/14164184-dfdc-4f26-b207-477625bc7682"))
+                using (var ws = new WebSocketSharp.WebSocket(adr))
 
                 {
                     ws.OnOpen += (sender, e) => ws.Send("Hi, there!");

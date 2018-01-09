@@ -3,6 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Actions="clr-namespace:MahApps.Metro.Actions;assembly=MahApps.Metro"
+	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
 	x:Class="WebSocketDemo.Mente"
 	x:Name="Page"
 	WindowTitle="Page"
@@ -83,5 +84,29 @@
                 <DropShadowEffect Color="#FF00F3FF" BlurRadius="40" Direction="0" ShadowDepth="0"/>
             </TextBox.Effect>
         </TextBox>
+        <Canvas x:Name="canvasSelectTarget" Height="217" RenderTransformOrigin="0.5,0.5" Width="224" Canvas.Left="738" Canvas.Top="5">
+            <Rectangle Height="214" Width="220" RadiusX="5" RadiusY="5">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="White" Opacity="0.15"/>
+                </Rectangle.Stroke>
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="White" Opacity="0.06"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <RadioButton x:Name="rb01" Content="DEMO1" Height="36" Canvas.Left="10" Canvas.Top="37" Width="101" FontFamily="Yu Gothic UI Light" FontSize="20" Checked="rb01_Checked"/>
+            <RadioButton x:Name="rb02" Content="DEMO2" Height="36" Canvas.Left="10" Canvas.Top="76" Width="101" FontFamily="Yu Gothic UI Light" FontSize="20" Checked="rb02_Checked"/>
+            <RadioButton x:Name="rb03" Content="DEMO3" Height="36" Canvas.Left="10" Canvas.Top="115" Width="101" FontFamily="Yu Gothic UI Light" FontSize="20" Checked="rb03_Checked"/>
+            <RadioButton x:Name="rb04" Content="DEMO4" Height="36" Canvas.Left="10" Canvas.Top="154" Width="101" FontFamily="Yu Gothic UI Light" FontSize="20" Checked="rb04_Checked"/>
+            <TextBlock TextWrapping="Wrap" Text="接続先" FontSize="16" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="21" Width="126" RenderTransformOrigin="0.5,0.5" Canvas.Top="10" Canvas.Left="10">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Canvas>
     </Canvas>
 </Page>

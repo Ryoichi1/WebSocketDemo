@@ -26,7 +26,7 @@
             <TabControl x:Name="TabMenu" Height="660" Canvas.Left="12" Width="1274" 
                     Canvas.Top="5" FlowDirection="RightToLeft" SelectionChanged="TabMenu_SelectionChanged" SelectedIndex="{Binding TabIndex}">
                 <TabItem x:Name="TabTest" Header="Main" Foreground="Red" Margin="1224,13.838,-1228,-13.839" Controls:ControlsHelper.HeaderFontSize="20"  IsEnabled="{Binding EnableOtherButton}" FontFamily="Yu Gothic UI Light" FontSize="12" Padding="0" VerticalAlignment="Center">
-                        <Frame x:Name="FrameTest"/>
+                    <Frame x:Name="FrameTest"/>
                 </TabItem>
                 <TabItem x:Name="TabConf" Header="Utility" Margin="1109,13,-1111,-13" Controls:ControlsHelper.HeaderFontSize="20" IsEnabled="{Binding EnableOtherButton}" Foreground="White" FontFamily="Yu Gothic UI Light" Padding="0">
                     <Frame x:Name="FrameConf" Margin="0,18,0,-6" />
@@ -34,7 +34,6 @@
                 <TabItem x:Name="TabHelp" Header="Help" Margin="993,13.339,-997,-13.339" Controls:ControlsHelper.HeaderFontSize="20" IsEnabled="{Binding EnableOtherButton}" FontFamily="Yu Gothic UI Light" Padding="0">
                     <Frame x:Name="FrameHelp" Margin="1,26,-1,-10" />
                 </TabItem>
-                <Label Content="Label" Height="36" Width="57"/>
             </TabControl>
             <Polyline Points="0,0 190,0 200,10 1200,10" Stroke="#FF00A2FF" StrokeThickness="1" Canvas.Left="19.346" Width="1257.294" Canvas.Top="45.33" Height="14.5">
                 <Polyline.Effect>
@@ -42,5 +41,10 @@
                 </Polyline.Effect>
             </Polyline>
         </Canvas>
+        <Label Content="{Binding TargetAdr}" Height="33" Canvas.Left="241" Canvas.Top="27" Width="778" FontFamily="Yu Gothic UI Light" Foreground="White" FontSize="18">
+            <Label.Effect>
+                <DropShadowEffect Color="#FF0495F9" BlurRadius="15" Direction="0" ShadowDepth="0"/>
+            </Label.Effect>
+        </Label>
     </Canvas>
 </Controls:MetroWindow>

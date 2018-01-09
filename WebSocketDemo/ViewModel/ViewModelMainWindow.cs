@@ -25,6 +25,12 @@ namespace WebSocketDemo
             SelectIndex = -1;
         }
 
+        private string _TargetAdr;
+        public string TargetAdr
+        {
+            get { return _TargetAdr; }
+            set { SetProperty(ref _TargetAdr, value); }
+        }
 
         private string _Theme;
         public string Theme

@@ -33,6 +33,9 @@ namespace WebSocketDemo
             //カレントディレクトリの取得
             State.CurrDir = Directory.GetCurrentDirectory();
 
+            State.Target = State.TARGET.DEMO_01;
+            General.ShowTargetAdr();
+
             InitMainForm();//メインフォーム初期
 
         }

@@ -7,6 +7,7 @@ namespace WebSocketDemo
     public static class State
     {
         public enum MODE { DEBUG, NORMAL }
+        public enum TARGET { DEMO_01, DEMO_02, DEMO_03, DEMO_04 }
 
         //データソース（バインディング用）
         public static ViewModelMainWindow VmMainWindow = new ViewModelMainWindow();
@@ -16,6 +17,8 @@ namespace WebSocketDemo
         public static Configuration Setting { get; set; }
 
         public static MODE Mode { get; set; } = MODE.NORMAL;
+
+        public static TARGET Target { get; set; }
 
         public static string CurrDir { get; set; }
 
