@@ -9,30 +9,36 @@ namespace WebSocketDemo
         public static readonly string ATS_DEMO4 = @"wss://api.sakura.io/ws/v1/f7cbb345-dcf6-41da-8b86-5bdeca805498";
 
         public static readonly string filePath_Configuration = "";
-        //１分
-        public static readonly int Lev1_DispInterval = 60;
-        public static readonly int Lev1_MajStep = 10;
-        public static readonly int Lev1_Marjin = 7;
 
-        //５分
-        public static readonly int Lev2_DispInterval = 300;
-        public static readonly int Lev2_MajStep = 30;
-        public static readonly int Lev2_Marjin = 29;
+        //5分
+        public static readonly int Lev1_DispInterval = 60*5;
+        public static readonly int Lev1_MajStep = 60*5/10;
+        public static readonly int Lev1_Coefficient = 60*5/10;
 
         //10分
-        public static readonly int Lev3_DispInterval = 600;
-        public static readonly int Lev3_MajStep = 60;
-        public static readonly int Lev3_Marjin = 59;
+        public static readonly int Lev2_DispInterval = 60*10;
+        public static readonly int Lev2_MajStep = 60*10/10;
+        public static readonly int Lev2_Coefficient = 60*10/10;
 
         //30分
-        public static readonly int Lev4_DispInterval = 1800;
-        public static readonly int Lev4_MajStep = 300;
-        public static readonly int Lev4_Marjin = 200;
+        public static readonly int Lev3_DispInterval = 60*30;
+        public static readonly int Lev3_MajStep = 180;
+        public static readonly int Lev3_Coefficient = 60*30/10;
 
-        //60分
-        public static readonly int Lev5_DispInterval = 3600;
-        public static readonly int Lev5_MajStep = 600;
-        public static readonly int Lev5_Marjin = 400;
+        //1H
+        public static readonly int Lev4_DispInterval = 60*60;
+        public static readonly int Lev4_MajStep = 60*60/10;
+        public static readonly int Lev4_Coefficient = 60*60/10;
+
+        //12H
+        public static readonly int Lev5_DispInterval = 60*60*12;
+        public static readonly int Lev5_MajStep = 60*60*12/10;
+        public static readonly int Lev5_Coefficient = 60*60*12/10;
+
+        //24H
+        public static readonly int Lev6_DispInterval = 60*60*24;
+        public static readonly int Lev6_MajStep = 60*60*24/10;
+        public static readonly int Lev6_Coefficient = 60*60*24/10;
 
     }
 }

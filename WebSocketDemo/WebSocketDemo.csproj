@@ -157,7 +157,6 @@
     <Compile Include="Yoshida\JsonData.cs" />
     <Compile Include="Yoshida\NotificationMessage.cs" />
     <Compile Include="Yoshida\Notifier.cs" />
-    <Compile Include="Config\Configuration.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -278,6 +277,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Pic\non.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -101,6 +101,52 @@ namespace WebSocketDemo
         public int MinRangeHumid { get { return _MinRangeHumid; } set { SetProperty(ref _MinRangeHumid, value); } }
 
 
+        private string _time0;
+        public string time0 { get { return _time0; } set { SetProperty(ref _time0, value); } }
+
+        private string _time1;
+        public string time1 { get { return _time1; } set { SetProperty(ref _time1, value); } }
+
+        private string _time2;
+        public string time2 { get { return _time2; } set { SetProperty(ref _time2, value); } }
+
+        private string _time3;
+        public string time3 { get { return _time3; } set { SetProperty(ref _time3, value); } }
+
+        private string _time4;
+        public string time4 { get { return _time4; } set { SetProperty(ref _time4, value); } }
+
+        private string _time5;
+        public string time5 { get { return _time5; } set { SetProperty(ref _time5, value); } }
+
+        private string _time6;
+        public string time6 { get { return _time6; } set { SetProperty(ref _time6, value); } }
+
+        private string _time7;
+        public string time7 { get { return _time7; } set { SetProperty(ref _time7, value); } }
+
+        private string _time8;
+        public string time8 { get { return _time8; } set { SetProperty(ref _time8, value); } }
+
+        private string _time9;
+        public string time9 { get { return _time9; } set { SetProperty(ref _time9, value); } }
+
+        private string _time10;
+        public string time10 { get { return _time10; } set { SetProperty(ref _time10, value); } }
+
+        //
+        private Visibility _VisT280;
+        public Visibility VisT280 { get { return _VisT280; } set { SetProperty(ref _VisT280, value); } }
+
+        private Visibility _VisT10;
+        public Visibility VisT10 { get { return _VisT10; } set { SetProperty(ref _VisT10, value); } }
+
+        private Visibility _VisT15;
+        public Visibility VisT15 { get { return _VisT15; } set { SetProperty(ref _VisT15, value); } }
+
+        private Visibility _VisH280;
+        public Visibility VisH280 { get { return _VisH280; } set { SetProperty(ref _VisH280, value); } }
+
         //For Mente.xaml■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
         private string _CommLog;

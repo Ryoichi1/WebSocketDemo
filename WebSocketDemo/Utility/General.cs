@@ -1,7 +1,11 @@
-﻿using System.Threading;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using static System.Threading.Thread;
+using static WebSocketDemo.State;
 
 namespace WebSocketDemo
 {
@@ -9,27 +13,8 @@ namespace WebSocketDemo
 
     public static class General
     {
-        public static SolidColorBrush DialogOnBrush = new SolidColorBrush();
-        public static SolidColorBrush OnBrush = new SolidColorBrush();
-        public static SolidColorBrush OffBrush = new SolidColorBrush();
-        public static SolidColorBrush NgBrush = new SolidColorBrush();
 
-
-        static General()
-        {
-            OffBrush.Color = Colors.Transparent;
-
-            DialogOnBrush.Color = Colors.DodgerBlue;
-            DialogOnBrush.Opacity = 0.6;
-
-            OnBrush.Color = Colors.DodgerBlue;
-            OnBrush.Opacity = 0.4;
-
-            NgBrush.Color = Colors.HotPink;
-            NgBrush.Opacity = 0.4;
-        }
-
-        public static void ShowTargetAdr()
+        public static void ShowTarget()
         {
             var adr = "";
             switch (State.Target)
@@ -45,6 +30,27 @@ namespace WebSocketDemo
                     break;
                 case State.TARGET.DEMO_04:
                     adr = $"ATS DEMO 04    {Constants.ATS_DEMO4}";
+                    break;
+            }
+            State.VmMainWindow.TargetAdr = adr;
+        }
+
+        public static void ShowTargetWithoutAdr()
+        {
+            var adr = "";
+            switch (State.Target)
+            {
+                case State.TARGET.DEMO_01:
+                    adr = $"ATS DEMO 01";
+                    break;
+                case State.TARGET.DEMO_02:
+                    adr = $"ATS DEMO 02";
+                    break;
+                case State.TARGET.DEMO_03:
+                    adr = $"ATS DEMO 03";
+                    break;
+                case State.TARGET.DEMO_04:
+                    adr = $"ATS DEMO 04";
                     break;
             }
             State.VmMainWindow.TargetAdr = adr;

@@ -5,7 +5,6 @@ namespace WebSocketDemo
     public static class Flags
     {
         public static bool CanExe { get; set; }
-        public static bool Sensing { get; set; }
         
         public static bool IsActiveGetData { get; set; }
         public static bool IsActiveGetDataMock { get; set; }

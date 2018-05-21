@@ -49,25 +49,30 @@ namespace WebSocketDemo
         private void rb01_Checked(object sender, RoutedEventArgs e)
         {
             State.Target = State.TARGET.DEMO_01;
-            General.ShowTargetAdr();
+            General.ShowTarget();
         }
 
         private void rb02_Checked(object sender, RoutedEventArgs e)
         {
             State.Target = State.TARGET.DEMO_02;
-            General.ShowTargetAdr();
+            General.ShowTarget();
         }
 
         private void rb03_Checked(object sender, RoutedEventArgs e)
         {
             State.Target = State.TARGET.DEMO_03;
-            General.ShowTargetAdr();
+            General.ShowTarget();
         }
 
         private void rb04_Checked(object sender, RoutedEventArgs e)
         {
             State.Target = State.TARGET.DEMO_04;
-            General.ShowTargetAdr();
+            General.ShowTarget();
+        }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            General.ShowTargetWithoutAdr();
         }
     }
 }

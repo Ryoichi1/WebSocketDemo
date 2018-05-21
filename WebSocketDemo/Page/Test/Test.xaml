@@ -50,16 +50,16 @@
                     <Setter Property="FontFamily" Value="Yu Gothic UI Light"/>
                 </Style>
             </Canvas.Resources>
-            <oxy:Plot Height="526" Width="1009" Canvas.Top="83" Canvas.Left="260" Background="{x:Null}" Foreground="White" BorderBrush="White" PlotAreaBorderColor="White" TextColor="White">
+            <oxy:Plot Height="526" Width="1009" Canvas.Top="75" Canvas.Left="260" Background="{x:Null}" Foreground="White" BorderBrush="White" PlotAreaBorderColor="White" TextColor="White">
                 <oxy:Plot.Axes>
                     <oxy:LinearAxis Title="温度  ℃" TitleFontSize="20" FontSize="14" Minimum="{Binding MinRangeTemp}" Maximum="{Binding MaxRangeTemp}" Position="Left"  TitleColor="White"  TextColor="White" TicklineColor="White" MajorGridlineStyle="Solid" MajorGridlineColor="Gray" AxisTitleDistance="16" />
                     <oxy:LinearAxis Title="湿度  ％" TitleFontSize="20" FontSize="14" Minimum="{Binding MinRangeHumid}" Maximum="{Binding MaxRangeHumid}" Position="Right" TitleColor="White" TextColor="White" TicklineColor="White" AxisTitleDistance="16"/>
-                    <oxy:TimeSpanAxis Title="" TitleFontSize="20"  FontSize="14" MajorStep="{Binding MajStep}" Maximum="{Binding MaxTime}" Minimum="{Binding MinTime}" FlowDirection="LeftToRight" Position="Bottom" TextColor="White" TitleColor="White" TicklineColor="White" MinorGridlineColor="White" MajorGridlineColor="White" ExtraGridlineColor="White"  AxisTitleDistance="14" AxislineStyle="Automatic"/>
+                    <oxy:TimeSpanAxis Title=""  TitleFontSize="60"  FontSize="14" MajorTickSize="1" MajorStep="{Binding MajStep}" Maximum="{Binding MaxTime}" Minimum="{Binding MinTime}" FlowDirection="LeftToRight" Position="Bottom" TextColor="Transparent" TitleColor="White" TicklineColor="White" MinorGridlineColor="White" MajorGridlineColor="White" ExtraGridlineColor="White"  AxisTitleDistance="14" AxislineStyle="Automatic"/>
                 </oxy:Plot.Axes>
-                <oxy:LineSeries Title="280温"  MarkerType="Circle" MarkerSize="2.5" MarkerFill="DodgerBlue" ItemsSource="{Binding ListTemp280}" Color="DodgerBlue" Foreground="White"  LineStyle="Automatic" StrokeThickness="1" DataFieldX="" DataFieldY=""  />
-                <oxy:LineSeries Title="10温"   MarkerType="Circle" MarkerSize="2.5" MarkerFill="Orange" ItemsSource="{Binding ListTemp10}" Color="Orange" Foreground="White"  LineStyle="Automatic" StrokeThickness="1"  />
-                <oxy:LineSeries Title="15温"   MarkerType="Circle" MarkerSize="2.5" MarkerFill="Red" ItemsSource="{Binding ListTemp15}" Color="Red" Foreground="White"  LineStyle="Automatic" StrokeThickness="1"  />
-                <oxy:LineSeries Title="280湿"  MarkerType="Square"  MarkerSize="2.5" MarkerFill="YellowGreen" ItemsSource="{Binding ListHumid280}" Color="YellowGreen" LineStyle="Automatic" StrokeThickness="1"  />
+                <oxy:LineSeries Visibility="{Binding VisT280}" MarkerType="Circle" MarkerSize="2.5" MarkerFill="DodgerBlue" ItemsSource="{Binding ListTemp280}" Color="DodgerBlue" Foreground="White"  LineStyle="Automatic" StrokeThickness="1"/>
+                <oxy:LineSeries Visibility="{Binding VisT10}" MarkerType="Circle" MarkerSize="2.5" MarkerFill="Orange" ItemsSource="{Binding ListTemp10}" Color="Orange" Foreground="White"  LineStyle="Automatic" StrokeThickness="1"  />
+                <oxy:LineSeries Visibility="{Binding VisT15}" MarkerType="Circle" MarkerSize="2.5" MarkerFill="Red" ItemsSource="{Binding ListTemp15}" Color="Red" Foreground="White"  LineStyle="Automatic" StrokeThickness="1"  />
+                <oxy:LineSeries Visibility="{Binding VisH280}" MarkerType="Square"  MarkerSize="2.5" MarkerFill="YellowGreen" ItemsSource="{Binding ListHumid280}" Color="YellowGreen" LineStyle="Automatic" StrokeThickness="1"  />
 
             </oxy:Plot>
 
@@ -93,8 +93,8 @@
                 <TextBlock Height="28" Canvas.Left="171" Canvas.Top="38" Width="75" Padding="5,5,0,0" TextWrapping="Wrap" Foreground="#FFFF06C6" Text="{Binding MaxTemp280}" FontSize="18"/>
                 <TextBlock Height="28" Canvas.Left="171" Canvas.Top="68" Width="75" Padding="5,5,0,0" TextWrapping="Wrap" Foreground="#FF00A2FF" Text="{Binding MinTemp280}" FontSize="18"/>
             </Canvas>
-            <Canvas Height="50" RenderTransformOrigin="0.5,0.5" Canvas.Top="22" Width="381" Canvas.Left="337">
-                <Rectangle Height="50" Width="372" RadiusX="5" RadiusY="5">
+            <Canvas Height="50" RenderTransformOrigin="0.5,0.5" Canvas.Top="22" Width="446" Canvas.Left="337">
+                <Rectangle Height="50" Width="423" RadiusX="5" RadiusY="5">
                     <Rectangle.Stroke>
                         <SolidColorBrush Color="White" Opacity="0.15"/>
                     </Rectangle.Stroke>
@@ -113,10 +113,10 @@
                     </ed:RegularPolygon.RenderTransform>
                 </ed:RegularPolygon>
                 <Rectangle x:Name="buttonStop" Fill="#FF247DE8" Height="20" Canvas.Left="72" Canvas.Top="16" Width="20" Cursor="Hand" MouseLeftButtonDown="buttonStop_MouseLeftButtonDown" MouseEnter="buttonStop_MouseEnter" MouseLeave="buttonStop_MouseLeave"/>
-                <Canvas Height="24" Width="225" Canvas.Left="135" Canvas.Top="15">
-                    <Slider x:Name="SliderLev" Height="10" Canvas.Left="28" Width="160" Background="#FF255272" Maximum="5" SmallChange="1" Style="{DynamicResource FlatSlider}" BorderBrush="#FF1481EE" ValueChanged="SliderLev_ValueChanged" Minimum="1" MouseLeftButtonUp="SliderLev_MouseLeftButtonUp" TickFrequency="0" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" IsHitTestVisible="True" Foreground="#FF1CB3D4" Canvas.Top="4"/>
+                <Canvas Height="24" Width="254" Canvas.Left="135" Canvas.Top="15">
+                    <Slider x:Name="SliderLev" Height="10" Canvas.Left="28" Width="190" Background="#FF255272" Maximum="6" SmallChange="1" Style="{DynamicResource FlatSlider}" BorderBrush="#FF1481EE" ValueChanged="SliderLev_ValueChanged" Minimum="1" MouseLeftButtonUp="SliderLev_MouseLeftButtonUp" TickFrequency="0" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" IsHitTestVisible="True" Foreground="#FF1CB3D4" Canvas.Top="4"/>
                     <Label Height="20" Width="20" BorderBrush="#FF068BF9" BorderThickness="1" Content="－" FontSize="12" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                    <Label Height="20" Width="20" BorderBrush="#FF068BF9" BorderThickness="1" Content="＋" FontSize="12" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Canvas.Left="195"/>
+                    <Label Height="20" Width="20" BorderBrush="#FF068BF9" BorderThickness="1" Content="＋" FontSize="12" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Canvas.Left="223"/>
                 </Canvas>
             </Canvas>
             <Canvas Height="100" Width="248" Canvas.Left="9" Canvas.Top="166">
@@ -195,6 +195,42 @@
                 <TextBlock Height="28" Canvas.Left="171" Canvas.Top="38" Width="75" Padding="5,5,0,0" TextWrapping="Wrap" Foreground="#FFFF06C6" Text="{Binding MaxPress280}" FontSize="18"/>
                 <TextBlock Height="28" Canvas.Left="171" Canvas.Top="68" Width="75" Padding="5,5,0,0" TextWrapping="Wrap" Foreground="#FF00A2FF" Text="{Binding MinPress280}" FontSize="18"/>
             </Canvas>
+            <Canvas Height="55" Width="264" Canvas.Left="929" Canvas.Top="24">
+                <Ellipse Fill="DodgerBlue" Height="10" Canvas.Left="22" Canvas.Top="12" Width="10"/>
+                <Ellipse Fill="Orange" Height="10" Canvas.Left="22" Canvas.Top="36" Width="10"/>
+                <Ellipse Fill="Red" Height="10" Canvas.Left="154" Canvas.Top="12" Width="10"/>
+                <Ellipse Fill="YellowGreen" Height="10" Canvas.Left="154" Canvas.Top="36" Width="10"/>
+                <Border BorderThickness="1" Height="5" Canvas.Left="8" Canvas.Top="15" Width="42" Background="DodgerBlue"/>
+                <Border BorderThickness="1" Height="5" Canvas.Left="8" Canvas.Top="39" Width="42" Background="Orange"/>
+                <Border BorderThickness="1" Height="5" Canvas.Left="140" Canvas.Top="15" Width="42" Background="Red"/>
+                <Border BorderThickness="1" Height="5" Canvas.Left="140" Canvas.Top="39" Width="42" Background="YellowGreen" RenderTransformOrigin="0.5,0.5"/>
+                <Label x:Name="labelT280" Foreground="DodgerBlue" Content="BME280温度" Height="15" Canvas.Left="54" Canvas.Top="10" Width="76" Padding="0" FontSize="12" Cursor="Hand" MouseLeftButtonDown="labelT280_MouseLeftButtonDown"/>
+                <Label x:Name="labelT10" Foreground="Orange" Content="SDC10温度" Height="15" Canvas.Left="54" Canvas.Top="34" Width="76" Padding="0" FontSize="12" Cursor="Hand" MouseLeftButtonDown="labelT10_MouseLeftButtonDown"/>
+                <Label x:Name="labelT15" Foreground="Red" Content="SDC15温度" Height="15" Canvas.Left="186" Canvas.Top="10" Width="76" Padding="0" FontSize="12" Cursor="Hand" MouseLeftButtonDown="labelT15_MouseLeftButtonDown"/>
+                <Label x:Name="labelH280" Foreground="YellowGreen" Content="BME280湿度" Height="15" Canvas.Left="186" Canvas.Top="34" Width="76" Padding="0" FontSize="12" Cursor="Hand" MouseLeftButtonDown="labelH280_MouseLeftButtonDown"/>
+            </Canvas>
+            <Label Content="{Binding time10}" Height="20" Canvas.Left="309" Canvas.Top="585" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time9}" Height="20" Canvas.Left="394" Canvas.Top="586" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time8}" Height="20" Canvas.Left="479" Canvas.Top="584" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time7}" Height="20" Canvas.Left="564" Canvas.Top="584" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time6}" Height="20" Canvas.Left="650" Canvas.Top="585" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time5}" Height="20" Canvas.Left="735" Canvas.Top="585" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time4}" Height="20" Canvas.Left="820" Canvas.Top="585" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time3}" Height="20" Canvas.Left="906" Canvas.Top="585" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time2}" Height="20" Canvas.Left="991" Canvas.Top="584" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time1}" Height="20" Canvas.Left="1076" Canvas.Top="584" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Label Content="{Binding time0}" Height="20" Canvas.Left="1162" Canvas.Top="585" Width="60" FontFamily="Meiryo UI" Padding="0" />
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="338" Canvas.Top="570" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="935" Canvas.Top="570" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="1020" Canvas.Top="569" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="1191" Canvas.Top="569" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="1105" Canvas.Top="569" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="849" Canvas.Top="570" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="764" Canvas.Top="570" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="679" Canvas.Top="570" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="593" Canvas.Top="570" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="508" Canvas.Top="570" Width="1"/>
+            <Rectangle Fill="#FFF4F4F5" Height="14" Canvas.Left="423" Canvas.Top="571" Width="1"/>
         </Canvas>
 
 

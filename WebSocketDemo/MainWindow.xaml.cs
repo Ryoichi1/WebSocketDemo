@@ -34,7 +34,7 @@ namespace WebSocketDemo
             State.CurrDir = Directory.GetCurrentDirectory();
 
             State.Target = State.TARGET.DEMO_01;
-            General.ShowTargetAdr();
+            General.ShowTargetWithoutAdr();
 
             InitMainForm();//メインフォーム初期
 
@@ -82,8 +82,8 @@ namespace WebSocketDemo
                 App._naviHelp.Refresh();
                 App._naviTest.Navigate(uriTestPage);
 
-                if (Flags.Testing)
-                    return;
+                //if (Flags.Testing)
+                //    return;
 
                 //高速にページ切り替えボタンを押すと異常動作する場合があるので、ページが遷移してから500msec間は、他のページに遷移できないようにする
                 State.VmMainWindow.EnableOtherButton = false;
@@ -112,12 +112,7 @@ namespace WebSocketDemo
 
             }
 
-
-
         }
-
-
-
 
     }
 }

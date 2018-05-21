@@ -12,14 +12,11 @@
         Height="680" Width="1300" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Closing="MetroWindow_Closing" IsEnabled="{Binding MainWinEnable}" >
 
     <Canvas Background="#FF323B44">
-        <!--<Canvas Height="678" Width="1298">
-            <Canvas.Effect>
-                <BlurEffect Radius="{Binding ThemeBlurEffectRadius}"/>
-            </Canvas.Effect>
-            <Canvas.Background>
-                <ImageBrush Opacity="{Binding ThemeOpacity}" ImageSource="{Binding Theme, NotifyOnSourceUpdated=True}" Stretch="UniformToFill" />
-            </Canvas.Background>
-        </Canvas>-->
+        <Canvas Height="642" Width="622" Canvas.Left="652" Canvas.Top="-8">
+            <!--<Canvas.Background>
+                <ImageBrush Opacity="0.6" ImageSource="Resources/Pic/non.png" Stretch="Uniform" />
+            </Canvas.Background>-->
+        </Canvas>
         <Canvas x:Name="MainBack">
             <!--<Frame x:Name="MainFrame" Height="527" Width="1246" Canvas.Left="10" Canvas.Top="411"/>-->
 
